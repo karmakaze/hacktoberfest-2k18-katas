@@ -1,3 +1,3 @@
-export const createBinarySearchTree = () => {
+export const createBinarySearchTree = (elements) => {
   // TO IMPLEMENT IN ANOTHER PR
 };

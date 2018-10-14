@@ -23,23 +23,31 @@ describe('createBinarySearchTree', () => {
   const tree = createBinarySearchTree([5,1,8,3,7,2,6,9,4]);
 
   it('createBinarySearchTree creates a search tree from an array', () => {
-    expect(tree.find).toBeDefined();
+    expect(tree.search).toBeDefined();
+    expect(tree.insert).toBeDefined();
   });
 
-  it('createBinarySearchTree.find returns elements which exist', () => {
-    expect(tree.find(1)).toEqual(1);
-    expect(tree.find(2)).toEqual(2);
-    expect(tree.find(3)).toEqual(3);
-    expect(tree.find(4)).toEqual(4);
-    expect(tree.find(5)).toEqual(5);
-    expect(tree.find(6)).toEqual(6);
-    expect(tree.find(7)).toEqual(7);
-    expect(tree.find(8)).toEqual(8);
-    expect(tree.find(9)).toEqual(9);
+  it('createBinarySearchTree.search returns elements which exist', () => {
+    expect(tree.search(1)).toEqual(1);
+    expect(tree.search(2)).toEqual(2);
+    expect(tree.search(3)).toEqual(3);
+    expect(tree.search(4)).toEqual(4);
+    expect(tree.search(5)).toEqual(5);
+    expect(tree.search(6)).toEqual(6);
+    expect(tree.search(7)).toEqual(7);
+    expect(tree.search(8)).toEqual(8);
+    expect(tree.search(9)).toEqual(9);
   });
 
   it('createBinarySearchTree returns null if element is not found', () => {
-    expect(tree.find(999)).toEqual(null);
+    expect(tree.search(999)).toEqual(null);
+  });
+
+  it('createBinarySearchTree can insert an element to a built tree', () => {
+    let root = createBinarySearchTree([5,1,8,3,7,2,6,9,4]);
+    expect(root.search(999)).toEqual(null);
+    root.insert(999);
+    expect(root.search(999)).toEqual(999);
   });
 });
 
